@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.css": "/golf-club/static/css/main.842e4731.chunk.css",
-    "main.js": "/golf-club/static/js/main.9e204a24.chunk.js",
-    "main.js.map": "/golf-club/static/js/main.9e204a24.chunk.js.map",
+    "main.css": "/golf-club/static/css/main.a1cab7ed.chunk.css",
+    "main.js": "/golf-club/static/js/main.5fc4b865.chunk.js",
+    "main.js.map": "/golf-club/static/js/main.5fc4b865.chunk.js.map",
     "runtime-main.js": "/golf-club/static/js/runtime-main.1ff6e7e4.js",
     "runtime-main.js.map": "/golf-club/static/js/runtime-main.1ff6e7e4.js.map",
-    "static/js/2.956e682a.chunk.js": "/golf-club/static/js/2.956e682a.chunk.js",
-    "static/js/2.956e682a.chunk.js.map": "/golf-club/static/js/2.956e682a.chunk.js.map",
+    "static/css/2.9216b1f1.chunk.css": "/golf-club/static/css/2.9216b1f1.chunk.css",
+    "static/js/2.64639fe5.chunk.js": "/golf-club/static/js/2.64639fe5.chunk.js",
+    "static/js/2.64639fe5.chunk.js.map": "/golf-club/static/js/2.64639fe5.chunk.js.map",
     "index.html": "/golf-club/index.html",
-    "precache-manifest.36cfcd37ded61ce0d86e611c00d538a8.js": "/golf-club/precache-manifest.36cfcd37ded61ce0d86e611c00d538a8.js",
+    "precache-manifest.cea7918075bd99c86eee3e7e6d3408d5.js": "/golf-club/precache-manifest.cea7918075bd99c86eee3e7e6d3408d5.js",
     "service-worker.js": "/golf-club/service-worker.js",
-    "static/css/main.842e4731.chunk.css.map": "/golf-club/static/css/main.842e4731.chunk.css.map",
-    "static/js/2.956e682a.chunk.js.LICENSE.txt": "/golf-club/static/js/2.956e682a.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/golf-club/static/media/logo.5d5d9eef.svg"
+    "static/css/2.9216b1f1.chunk.css.map": "/golf-club/static/css/2.9216b1f1.chunk.css.map",
+    "static/css/main.a1cab7ed.chunk.css.map": "/golf-club/static/css/main.a1cab7ed.chunk.css.map",
+    "static/js/2.64639fe5.chunk.js.LICENSE.txt": "/golf-club/static/js/2.64639fe5.chunk.js.LICENSE.txt",
+    "static/media/default-skin.css": "/golf-club/static/media/default-skin.b257fa9c.svg",
+    "static/media/logo.jpg": "/golf-club/static/media/logo.31f42ce8.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.1ff6e7e4.js",
-    "static/js/2.956e682a.chunk.js",
-    "static/css/main.842e4731.chunk.css",
-    "static/js/main.9e204a24.chunk.js"
+    "static/css/2.9216b1f1.chunk.css",
+    "static/js/2.64639fe5.chunk.js",
+    "static/css/main.a1cab7ed.chunk.css",
+    "static/js/main.5fc4b865.chunk.js"
   ]
 }
