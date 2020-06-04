@@ -27,6 +27,8 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import InputBase from '@material-ui/core/InputBase';
 
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -121,11 +123,15 @@ const useStyles = makeStyles((theme) => ({
 function ResponsiveDrawer(props) {
   const {window, content} = props;
   const classes = useStyles();
-  const theme = useTheme();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [state, setState] = React.useState({
+    showDrawer: false
+  });
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+  const toggleDrawer = (open) => (event) => {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setState({...state, showDrawer: open});
   };
 
   const drawer = (
@@ -152,26 +158,17 @@ function ResponsiveDrawer(props) {
     </div>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
-
   return (
     <div className={classes.root}>
       <CssBaseline/>
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon/>
-            </div>
-            <InputBase
-              placeholder="Tìm kiếm…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{'aria-label': 'search'}}
-            />
-          </div>
+          <IconButton
+            onClick={toggleDrawer(true)}
+            color="inherit"
+          >
+            <MenuIcon/>
+          </IconButton>
           <div className={classes.grow}/>
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
@@ -203,24 +200,18 @@ function ResponsiveDrawer(props) {
           </div>
         </Toolbar>
       </AppBar>
+      <SwipeableDrawer
+        anchor={'left'}
+        open={state.showDrawer}
+        onClose={toggleDrawer(false)}
+        onOpen={toggleDrawer(true)}
+      >
+        {drawer}
+      </SwipeableDrawer>
       <nav className={classes.drawer} aria-label="mailbox folders">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
-          <Drawer
-            container={container}
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            {drawer}
-          </Drawer>
+
         </Hidden>
         <div xsDown implementation="css">
           <Drawer

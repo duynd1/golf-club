@@ -1,24 +1,37 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import ProductList from './ProductList'
+import ProductList2 from './ProductList2'
 import './styles.scss'
 import NavBar from '../../components/NavBar'
+import EditModal from './EditModal'
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      openEditModal: false,
+      editData: {}
+    }
+  }
+
+  onOpenEditModal = (data) => {
+    console.log('onOpenEditModal....', data)
+    this.setState({
+      openEditModal: true,
+      editData: data
+    })
+  }
+
+  onCloseEditModal = () => {
+    this.setState({openEditModal: false})
   }
 
   render() {
     return (
-      <div className="App">
-        <NavBar
-          content={
-            <div>
-              <ProductList/>
-            </div>
-          }/>
+      <div className="page-container">
+        <ProductList2 onPressEdit={this.onOpenEditModal}/>
+        <EditModal data={this.state.editData} open={this.state.openEditModal} handleClose={this.onCloseEditModal}/>
       </div>
     );
   }
