@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/golf-club/static/css/main.60fdb89a.chunk.css",
-    "main.js": "/golf-club/static/js/main.81bb7dbc.chunk.js",
-    "main.js.map": "/golf-club/static/js/main.81bb7dbc.chunk.js.map",
+    "main.css": "/golf-club/static/css/main.740acde1.chunk.css",
+    "main.js": "/golf-club/static/js/main.403b2b6b.chunk.js",
+    "main.js.map": "/golf-club/static/js/main.403b2b6b.chunk.js.map",
     "runtime-main.js": "/golf-club/static/js/runtime-main.1ff6e7e4.js",
     "runtime-main.js.map": "/golf-club/static/js/runtime-main.1ff6e7e4.js.map",
     "static/css/2.9216b1f1.chunk.css": "/golf-club/static/css/2.9216b1f1.chunk.css",
-    "static/js/2.cdab6be5.chunk.js": "/golf-club/static/js/2.cdab6be5.chunk.js",
-    "static/js/2.cdab6be5.chunk.js.map": "/golf-club/static/js/2.cdab6be5.chunk.js.map",
+    "static/js/2.39294cee.chunk.js": "/golf-club/static/js/2.39294cee.chunk.js",
+    "static/js/2.39294cee.chunk.js.map": "/golf-club/static/js/2.39294cee.chunk.js.map",
     "index.html": "/golf-club/index.html",
-    "precache-manifest.9e4ac6e82e5b4d1feba7dd7de70fc17a.js": "/golf-club/precache-manifest.9e4ac6e82e5b4d1feba7dd7de70fc17a.js",
+    "precache-manifest.787800ee0a6a60082df409538d85d6f9.js": "/golf-club/precache-manifest.787800ee0a6a60082df409538d85d6f9.js",
     "service-worker.js": "/golf-club/service-worker.js",
     "static/css/2.9216b1f1.chunk.css.map": "/golf-club/static/css/2.9216b1f1.chunk.css.map",
-    "static/css/main.60fdb89a.chunk.css.map": "/golf-club/static/css/main.60fdb89a.chunk.css.map",
-    "static/js/2.cdab6be5.chunk.js.LICENSE.txt": "/golf-club/static/js/2.cdab6be5.chunk.js.LICENSE.txt",
+    "static/css/main.740acde1.chunk.css.map": "/golf-club/static/css/main.740acde1.chunk.css.map",
+    "static/js/2.39294cee.chunk.js.LICENSE.txt": "/golf-club/static/js/2.39294cee.chunk.js.LICENSE.txt",
     "static/media/default-skin.css": "/golf-club/static/media/default-skin.b257fa9c.svg",
     "static/media/logo.jpg": "/golf-club/static/media/logo.31f42ce8.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.1ff6e7e4.js",
     "static/css/2.9216b1f1.chunk.css",
-    "static/js/2.cdab6be5.chunk.js",
-    "static/css/main.60fdb89a.chunk.css",
-    "static/js/main.81bb7dbc.chunk.js"
+    "static/js/2.39294cee.chunk.js",
+    "static/css/main.740acde1.chunk.css",
+    "static/js/main.403b2b6b.chunk.js"
   ]
 }
