@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/golf-club/static/css/main.9a43e57e.chunk.css",
-    "main.js": "/golf-club/static/js/main.23886a64.chunk.js",
-    "main.js.map": "/golf-club/static/js/main.23886a64.chunk.js.map",
+    "main.css": "/golf-club/static/css/main.2a1ba9dd.chunk.css",
+    "main.js": "/golf-club/static/js/main.c8a1824a.chunk.js",
+    "main.js.map": "/golf-club/static/js/main.c8a1824a.chunk.js.map",
     "runtime-main.js": "/golf-club/static/js/runtime-main.1ff6e7e4.js",
     "runtime-main.js.map": "/golf-club/static/js/runtime-main.1ff6e7e4.js.map",
     "static/css/2.9216b1f1.chunk.css": "/golf-club/static/css/2.9216b1f1.chunk.css",
     "static/js/2.19ec1d9e.chunk.js": "/golf-club/static/js/2.19ec1d9e.chunk.js",
     "static/js/2.19ec1d9e.chunk.js.map": "/golf-club/static/js/2.19ec1d9e.chunk.js.map",
     "index.html": "/golf-club/index.html",
-    "precache-manifest.9fed792a8f42fdddb294d91806c9beac.js": "/golf-club/precache-manifest.9fed792a8f42fdddb294d91806c9beac.js",
+    "precache-manifest.a9849210ca80ca06565ae331611b59ea.js": "/golf-club/precache-manifest.a9849210ca80ca06565ae331611b59ea.js",
     "service-worker.js": "/golf-club/service-worker.js",
     "static/css/2.9216b1f1.chunk.css.map": "/golf-club/static/css/2.9216b1f1.chunk.css.map",
-    "static/css/main.9a43e57e.chunk.css.map": "/golf-club/static/css/main.9a43e57e.chunk.css.map",
+    "static/css/main.2a1ba9dd.chunk.css.map": "/golf-club/static/css/main.2a1ba9dd.chunk.css.map",
     "static/js/2.19ec1d9e.chunk.js.LICENSE.txt": "/golf-club/static/js/2.19ec1d9e.chunk.js.LICENSE.txt",
     "static/media/default-skin.css": "/golf-club/static/media/default-skin.b257fa9c.svg",
     "static/media/logo.jpg": "/golf-club/static/media/logo.31f42ce8.jpg"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.1ff6e7e4.js",
     "static/css/2.9216b1f1.chunk.css",
     "static/js/2.19ec1d9e.chunk.js",
-    "static/css/main.9a43e57e.chunk.css",
-    "static/js/main.23886a64.chunk.js"
+    "static/css/main.2a1ba9dd.chunk.css",
+    "static/js/main.c8a1824a.chunk.js"
   ]
 }
