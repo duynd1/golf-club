@@ -11,15 +11,14 @@
 .details-container {
   display: flex;
   flex-direction: column;
-  margin-top: 60px;
-  padding: 50px;
+  min-height: 100vh;
 }
 
 .details-content-wrapper {
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
-  justify-content: space-around;
+  justify-content: center;
+  margin-top: 60px;
 }
 
 .vertical-table {

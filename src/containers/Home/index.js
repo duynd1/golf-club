@@ -23,6 +23,13 @@ export default class Home extends Component {
     })
   }
 
+  onOpenAddNewModal = () => {
+    this.setState({
+      openEditModal: true,
+      editData: {}
+    })
+  }
+
   onCloseEditModal = () => {
     this.setState({openEditModal: false})
   }
@@ -30,7 +37,9 @@ export default class Home extends Component {
   render() {
     return (
       <div className="page-container">
-        <ProductList2 onPressEdit={this.onOpenEditModal}/>
+        <ProductList2
+          onPressAddNew={this.onOpenAddNewModal}
+          onPressEdit={this.onOpenEditModal}/>
         <EditModal data={this.state.editData} open={this.state.openEditModal} handleClose={this.onCloseEditModal}/>
       </div>
     );

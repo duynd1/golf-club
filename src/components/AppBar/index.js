@@ -7,6 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Badge from "@material-ui/core/Badge";
 import ShoppingBasketOutlinedIcon from '@material-ui/icons/ShoppingBasketOutlined';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +29,7 @@ export default function MainAppBar(props) {
   console.log('AppBar.....', props)
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" style={{backgroundColor: '#3f51b5', color: 'white'}}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -38,17 +39,20 @@ export default function MainAppBar(props) {
           >
             <MenuIcon/>
           </IconButton>
-          <img
-            src={'https://www.golfthefairways.com/wp-content/uploads/2019/01/fairways-patch-logo.png'}
-            className="App-logo-99" alt="logo"/>
-
+          <Link to={'/'}>
+            <img
+              src={'https://www.golfthefairways.com/wp-content/uploads/2019/01/fairways-patch-logo.png'}
+              className="App-logo-99" alt="logo"/>
+          </Link>
           <div className={classes.grow}/>
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <ShoppingBasketOutlinedIcon/>
-              </Badge>
-            </IconButton>
+            <Link to={'/shopping-cart'}>
+              <IconButton aria-label="show 4 new mails" color="inherit">
+                <Badge badgeContent={4} color="secondary">
+                  <ShoppingBasketOutlinedIcon/>
+                </Badge>
+              </IconButton>
+            </Link>
             <IconButton
               edge="end"
               aria-label="account of current user"

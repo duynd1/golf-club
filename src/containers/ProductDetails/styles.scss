@@ -8,6 +8,14 @@
   font-size: 16px;
 }
 
+.details-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  padding: 50px;
+  height: 100%;
+}
+
 .fluid__instructions {
   flex: 0 0 auto;
   margin: 0 20px;

@@ -1,6 +1,7 @@
 import React from "react";
 import {makeStyles} from '@material-ui/core/styles';
-import MUIDataTable from "mui-datatables";
+// import MUIDataTable from "mui-datatables";
+import MUIDataTable from '../../../components/Table'
 import products from '../../../_mockData/products'
 import {Link} from "react-router-dom";
 import {Gallery, Item} from "react-photoswipe-gallery";
@@ -60,54 +61,13 @@ export default class ProductList2 extends React.PureComponent {
   render() {
     const columns = [
       {
-        label: 'hình ảnh',
-        name: 'images',
-        options: {
-          searchable: false,
-          filter: false,
-          sort: false,
-          customBodyRender: (value, tableMeta, updateValue) => {
-            if (!!value) {
-              return (
-                <div>
-                  <Gallery>
-                    {value.map((item, index) => {
-                      return <Item
-                        original={item.url}
-                        thumbnail={item.url}
-                        width="1024"
-                        height="768"
-                      >
-                        {({ref, open}) => (
-                          <img style={
-                            index != 0 ?
-                              {width: 0, height: 0} :
-                              {width: 50, height: 50}
-                          }
-                               ref={ref}
-                               onClick={open}
-                               src={item.url}
-                          />
-                        )}
-                      </Item>
-                    })}
-                  </Gallery>
-                </div>
-              )
-            } else {
-              return <div>Không có hình ảnh!</div>
-            }
-          }
-        }
-      },
-      {
         label: 'Mã SP', name: 'id',
         options: {
           searchable: true,
           filter: false,
           sort: false,
           customBodyRender: (value, tableMeta, updateValue) =>
-            <Link to={'/product-details'}>
+            <Link to={'/product-details-old'}>
               {value}
             </Link>
         },
@@ -166,7 +126,7 @@ export default class ProductList2 extends React.PureComponent {
           searchable: false,
           filter: false,
           sort: false,
-          customBodyRender: (value, tableMeta, updateValue) => `${value}₫`
+          customBodyRender: (value, tableMeta, updateValue) => `${value} ₫`
         }
       },
       {
@@ -175,6 +135,47 @@ export default class ProductList2 extends React.PureComponent {
           searchable: false,
           filter: true,
           sort: false,
+        }
+      },
+      {
+        label: 'hình ảnh',
+        name: 'images',
+        options: {
+          searchable: false,
+          filter: false,
+          sort: false,
+          customBodyRender: (value, tableMeta, updateValue) => {
+            if (!!value) {
+              return (
+                <div>
+                  <Gallery>
+                    {value.map((item, index) => {
+                      return <Item
+                        original={item.url}
+                        thumbnail={item.url}
+                        width="1024"
+                        height="768"
+                      >
+                        {({ref, open}) => (
+                          <img style={
+                            index != 0 ?
+                              {width: 0, height: 0} :
+                              {width: 50, height: 50}
+                          }
+                               ref={ref}
+                               onClick={open}
+                               src={item.url}
+                          />
+                        )}
+                      </Item>
+                    })}
+                  </Gallery>
+                </div>
+              )
+            } else {
+              return <div>Không có hình ảnh!</div>
+            }
+          }
         }
       },
       {
@@ -233,7 +234,9 @@ export default class ProductList2 extends React.PureComponent {
 
     const options = {
       filterType: "dropdown",
-      responsive: "scroll",
+      responsive: "stack",
+      rowsPerPage: 999999,
+      rowsPerPageOptions: [{label: 'Tất cả', value: 999999}, 10, 25, 50, 100],
       download: false,
       print: false,
       customToolbarSelect: this.renderToolBarSelect,
@@ -277,6 +280,7 @@ export default class ProductList2 extends React.PureComponent {
         data={data}
         columns={columns}
         options={options}
+        onAddNew={() => this.props.onPressAddNew()}
       />
     );
   }

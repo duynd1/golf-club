@@ -7,6 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from "@material-ui/core/Paper/Paper";
 import Grid from "@material-ui/core/Grid"
+import Box from "@material-ui/core/Box";
 
 export default class VerticalHeadingTable extends Component {
   constructor(props) {
@@ -47,8 +48,8 @@ export default class VerticalHeadingTable extends Component {
     ];
     const details = this.state.details
     return (
-      <div className={'vertical-table'}>
-        <TableContainer component={Paper} style={{width: 300}}>
+      <Box display="flex" justifyContent="flex-start" flexWrap="wrap">
+        <TableContainer component={Paper} style={{width: 300, margin: 10}}>
           <Table size="small" aria-label="a dense table">
             <TableBody>
               <TableRow>
@@ -99,8 +100,7 @@ export default class VerticalHeadingTable extends Component {
             </TableBody>
           </Table>
         </TableContainer>
-
-        <TableContainer component={Paper} style={{width: 300, marginLeft: 20}}>
+        <TableContainer component={Paper} style={{width: 300, margin: 10}}>
           <Table size="small" aria-label="a dense table">
             <TableBody>
               <TableRow>
@@ -152,7 +152,7 @@ export default class VerticalHeadingTable extends Component {
             </TableBody>
           </Table>
         </TableContainer>
-      </div>
+      </Box>
     )
   }
 }

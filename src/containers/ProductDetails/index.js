@@ -40,7 +40,7 @@ export default class Home extends Component {
       this.createData('#9', 34.0, 63.0, 70.0, '365g'),
     ];
     return (
-      <div className="page-container">
+      <div className="details-container">
         <div>
           <Breadcrumbs aria-label="breadcrumb">
             <MaterialLink color="inherit">

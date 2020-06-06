@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -33,9 +33,28 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TransitionsModal(props) {
   const classes = useStyles();
+  const [state, setState] = React.useState({
+    data: {},
+  });
 
-  console.log('TransitionsModal.....', props.open)
-  const {data} = props
+  useEffect(() => {
+    setState({
+      data: props.data,
+      isEdit: !!props.data.id
+    });
+  }, [props]);
+
+  const changeField = (fieldName, value) => {
+    setState({
+      ...state,
+      data: {
+        ...state.data,
+        [fieldName]: value
+      }
+    })
+  }
+
+  const {data, isEdit} = state
   return (
     <Modal
       aria-labelledby="transition-modal-title"
@@ -52,32 +71,59 @@ export default function TransitionsModal(props) {
       <Fade in={props.open}>
         <div className={classes.paper}>
           <Typography variant="h5" gutterBottom>
-            Chỉnh sửa
+            {isEdit ? 'Chỉnh sửa' : 'Thêm mới'}
           </Typography>
           <form className={classes.rootForm} noValidate autoComplete="off">
             <div>
               <TextField
-                disabled
                 id="id"
                 label="Mã sản phẩm"
-                defaultValue="Hello World"
                 variant="outlined"
                 value={data && data.id || ''}
+                disabled={isEdit}
+                onChange={event => {
+                  changeField('id', event.target.value)
+                }}
               />
-              <TextField value={data && data.category | ''} label="Category" type="search" variant="outlined"/>
-              <TextField value={data && data.brand || ''} label="Brand" type="search" variant="outlined"/>
-              <TextField value={data && data.loft || ''} label="Loft" type="search" variant="outlined"/>
-              <TextField value={data && data.flex || ''} label="Flex" type="search" variant="outlined"/>
-              <TextField value={data && data.gender || ''} label="Player" type="search" variant="outlined"/>
-              <TextField value={data && data.hand || ''} label="Hand" type="search" variant="outlined"/>
-              <TextField value={data && data.shaft || ''} label="Shaft" type="search" variant="outlined"/>
-              <TextField value={data && data.conditionRank || ''} label="Condition Rank" type="search"
-                         variant="outlined"/>
-              <TextField value={data && data.headcover || ''} label="Headcover" type="search" variant="outlined"/>
-              <TextField value={data && data.PLU || ''} label="PLU" type="search" variant="outlined"/>
-              <TextField value={data && data.price || ''} label="Giá" type="search" variant="outlined"/>
-              <TextField value={data && data.shop || ''} label="shop" type="search" variant="outlined"/>
-              <TextField value={data && data.status || ''} label="tình trạng" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('category', event.target.value)
+              }} value={data && data.category || ''} label="Category" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('brand', event.target.value)
+              }} value={data && data.brand || ''} label="Brand" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('loft', event.target.value)
+              }} value={data && data.loft || ''} label="Loft" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('flex', event.target.value)
+              }} value={data && data.flex || ''} label="Flex" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('gender', event.target.value)
+              }} value={data && data.gender || ''} label="Player" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('hand', event.target.value)
+              }} value={data && data.hand || ''} label="Hand" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('shaft', event.target.value)
+              }} value={data && data.shaft || ''} label="Shaft" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('conditionRank', event.target.value)
+              }} value={data && data.conditionRank || ''} label="Condition Rank" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('headcover', event.target.value)
+              }} value={data && data.headcover || ''} label="Headcover" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('PLU', event.target.value)
+              }} value={data && data.PLU || ''} label="PLU" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('price', event.target.value)
+              }} value={data && data.price || ''} label="Giá" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('shop', event.target.value)
+              }} value={data && data.shop || ''} label="shop" type="search" variant="outlined"/>
+              <TextField onChange={event => {
+                changeField('status', event.target.value)
+              }} value={data && data.status || ''} label="tình trạng" type="search" variant="outlined"/>
             </div>
           </form>
           <Button
