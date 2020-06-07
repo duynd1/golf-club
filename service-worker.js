@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/golf-club/precache-manifest.114fa1f8d3b68463c58289f159bdce38.js"
+  "/golf-club/precache-manifest.06110102f524d4f7abdbd25e06e4a854.js"
 );
 
 self.addEventListener('message', (event) => {
