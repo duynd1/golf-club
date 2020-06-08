@@ -5,6 +5,8 @@ import ProductList2 from './ProductList2'
 import './styles.scss'
 import NavBar from '../../components/NavBar'
 import EditModal from './EditModal'
+import Slider from '../../components/Slider'
+import Box from "@material-ui/core/Box";
 
 export default class Home extends Component {
   constructor(props) {
@@ -16,7 +18,6 @@ export default class Home extends Component {
   }
 
   onOpenEditModal = (data) => {
-    console.log('onOpenEditModal....', data)
     this.setState({
       openEditModal: true,
       editData: data
@@ -37,9 +38,11 @@ export default class Home extends Component {
   render() {
     return (
       <div className="page-container">
-        <ProductList2
-          onPressAddNew={this.onOpenAddNewModal}
-          onPressEdit={this.onOpenEditModal}/>
+        <Box display={'flex'} justifyContent="center" flexDirection="row" flexWrap="wrap">
+          <ProductList2
+            onPressAddNew={this.onOpenAddNewModal}
+            onPressEdit={this.onOpenEditModal}/>
+        </Box>
         <EditModal data={this.state.editData} open={this.state.openEditModal} handleClose={this.onCloseEditModal}/>
       </div>
     );

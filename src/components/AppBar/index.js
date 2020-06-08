@@ -46,7 +46,7 @@ export default function MainAppBar(props) {
           </Link>
           <div className={classes.grow}/>
           <div className={classes.sectionDesktop}>
-            <Link to={'/shopping-cart'}>
+            <Link to={'/shopping-cart'} style={{color: 'white'}}>
               <IconButton aria-label="show 4 new mails" color="inherit">
                 <Badge badgeContent={4} color="secondary">
                   <ShoppingBasketOutlinedIcon/>

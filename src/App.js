@@ -30,9 +30,6 @@ function App() {
         <Route path="/product-details" component={ProductDetails2}/>
         <Route path="/" component={Home}/>
       </Switch>
-      <footer>
-        Copyright © 2020 <strong>Golf Shop Demo</strong>
-      </footer>
     </BrowserRouter>
   );
 }

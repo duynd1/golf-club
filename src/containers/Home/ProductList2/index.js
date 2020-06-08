@@ -21,6 +21,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import InfoIcon from '@material-ui/icons/Info';
 import EditIcon from '@material-ui/icons/Edit';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -77,6 +78,7 @@ export default class ProductList2 extends React.PureComponent {
         options: {
           searchable: false,
           filter: true,
+          filterType: 'multiselect',
           sort: false,
         }
       },
@@ -85,6 +87,7 @@ export default class ProductList2 extends React.PureComponent {
         options: {
           searchable: false,
           filter: true,
+          filterType: 'multiselect',
           sort: false,
         }
       },
@@ -93,6 +96,7 @@ export default class ProductList2 extends React.PureComponent {
         options: {
           searchable: false,
           filter: true,
+          filterType: 'multiselect',
           sort: false,
         }
       },
@@ -101,6 +105,7 @@ export default class ProductList2 extends React.PureComponent {
         options: {
           searchable: false,
           filter: true,
+          filterType: 'multiselect',
           sort: false,
         }
       },
@@ -109,6 +114,7 @@ export default class ProductList2 extends React.PureComponent {
         options: {
           searchable: false,
           filter: true,
+          filterType: 'multiselect',
           sort: false,
         }
       },
@@ -117,6 +123,7 @@ export default class ProductList2 extends React.PureComponent {
         options: {
           searchable: false,
           filter: true,
+          filterType: 'multiselect',
           sort: false,
         }
       },
@@ -133,7 +140,7 @@ export default class ProductList2 extends React.PureComponent {
         label: 'Barcode', name: 'barcode',
         options: {
           searchable: false,
-          filter: true,
+          filter: false,
           sort: false,
         }
       },
@@ -160,7 +167,7 @@ export default class ProductList2 extends React.PureComponent {
                           <img style={
                             index != 0 ?
                               {width: 0, height: 0} :
-                              {width: 50, height: 50}
+                              {width: 40, height: 40, borderRadius: 20}
                           }
                                ref={ref}
                                onClick={open}
@@ -183,11 +190,12 @@ export default class ProductList2 extends React.PureComponent {
         options: {
           searchable: false,
           filter: true,
+          filterType: 'multiselect',
           sort: false,
         },
       },
       {
-        label: ' ',
+        label: 'Actions',
         name: 'meta',
         options: {
           searchable: false,
@@ -196,33 +204,31 @@ export default class ProductList2 extends React.PureComponent {
           viewColumns: false,
           customBodyRender: (value, tableMeta, updateValue) => {
             return (
-              <div>
-                <Grid container alignItems="center">
-                  <Tooltip title="Xoá">
+              <div style={{width: 180}}>
+                <Tooltip title="Xoá">
+                  <IconButton aria-label="delete">
+                    <DeleteIcon fontSize="small"/>
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title="Sửa">
+                  <IconButton onClick={() => {
+                    this.props.onPressEdit(value)
+                  }} aria-label="delete">
+                    <EditIcon fontSize="small"/>
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title="Chi tiết">
+                  <Link to={'/product-details'}>
                     <IconButton aria-label="delete">
-                      <DeleteIcon fontSize="small"/>
+                      <InfoIcon fontSize="small"/>
                     </IconButton>
-                  </Tooltip>
-                  <Tooltip title="Sửa">
-                    <IconButton onClick={() => {
-                      this.props.onPressEdit(value)
-                    }} aria-label="delete">
-                      <EditIcon fontSize="small"/>
-                    </IconButton>
-                  </Tooltip>
-                  <Tooltip title="Chi tiết">
-                    <Link to={'/product-details'}>
-                      <IconButton aria-label="delete">
-                        <InfoIcon fontSize="small"/>
-                      </IconButton>
-                    </Link>
-                  </Tooltip>
-                  <Tooltip title="Chọn mua">
-                    <IconButton aria-label="delete">
-                      <AddShoppingCartIcon fontSize="small"/>
-                    </IconButton>
-                  </Tooltip>
-                </Grid>
+                  </Link>
+                </Tooltip>
+                <Tooltip title="Chọn mua">
+                  <IconButton aria-label="delete">
+                    <AddShoppingCartIcon fontSize="small"/>
+                  </IconButton>
+                </Tooltip>
               </div>
             )
           }
@@ -234,9 +240,9 @@ export default class ProductList2 extends React.PureComponent {
 
     const options = {
       filterType: "dropdown",
-      responsive: "stack",
-      rowsPerPage: 999999,
-      rowsPerPageOptions: [{label: 'Tất cả', value: 999999}, 10, 25, 50, 100],
+      responsive: "stackedFullWidth",
+      rowsPerPage: products.length,
+      rowsPerPageOptions: [{label: 'Tất cả', value: products.length}, 10, 25, 50, 100],
       download: false,
       print: false,
       customToolbarSelect: this.renderToolBarSelect,

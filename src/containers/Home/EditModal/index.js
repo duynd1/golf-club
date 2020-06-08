@@ -18,14 +18,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-    maxWidth: 540,
-    maxHeight: 500,
+    padding: theme.spacing(1, 1, 1),
+    maxWidth: 520,
+    maxHeight: 550,
     overflowY: 'scroll'
   },
   rootForm: {
     '& .MuiTextField-root': {
-      margin: theme.spacing(1),
+      margin: theme.spacing(0.5),
       width: '25ch',
     },
   },
