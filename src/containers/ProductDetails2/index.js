@@ -14,6 +14,9 @@ import Box from '@material-ui/core/Box';
 
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Grid from "@material-ui/core/Grid";
+import {Carousel} from "react-responsive-carousel";
+import Container from "@material-ui/core/Container";
+import AppBar from "../../components/AppBar";
 
 export default class Home extends Component {
   constructor(props) {
@@ -35,6 +38,7 @@ export default class Home extends Component {
     ];
     return (
       <div className={'details-container'}>
+        <AppBar/>
         <Breadcrumbs aria-label="breadcrumb">
           <MaterialLink color="inherit">
             <Link to="/">Trang chủ</Link>
@@ -45,113 +49,57 @@ export default class Home extends Component {
           <Typography color="textPrimary">D619066-XX</Typography>
         </Breadcrumbs>
         <div className={'details-content-wrapper'}>
-          <Grid container spacing={3}>
-            <Grid item md={3} xs={12} justify="center">
-              <Box display="flex">
+          <Container component="main">
+            <Grid container spacing={3}>
+              <Grid item md={5} xs={12} justify="center">
                 <div>
-                  <h3>GẬY GOLF DUNLOP - D619066-XX</h3>
-                  <p>
-                    Mã sản phẩm: D619066-XX
-                  </p>
-                  <p>
-                    Nhà sản xuất: DUNLOP
-                  </p>
-                  <p className='price'>3,600,000₫</p>
-                  <div>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      size="large"
-                      startIcon={<AddShoppingCartIcon/>}
-                    >
-                      Đặt hàng
-                    </Button>
-                  </div>
-                  <p style={{color: '#2ecc71'}}>
-                    Còn hàng
-                  </p>
-                  <div style={{maxWidth: 300, marginBottom: 50}}>
-                    <Gallery>
-                      <Item
-                        original='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-7.png?v=1573617877677'
-                        thumbnail='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-7.png?v=1573617877677'
-                        width="1024"
-                        height="768"
-                      >
-                        {({ref, open}) => (
-                          <img style={{marginRight: 5, width: 80, height: 60}}
-                               ref={ref}
-                               onClick={open}
-                               src='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-7.png?v=1573617877677'
-                          />
-                        )}
-                      </Item>
-                      <Item
-                        original='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-5.png?v=1573617797197'
-                        thumbnail='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-5.png?v=1573617797197'
-                        width="1024"
-                        height="768"
-                      >
-                        {({ref, open}) => (
-                          <img style={{marginRight: 5, width: 80, height: 60}}
-                               ref={ref}
-                               onClick={open}
-                               src='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-5.png?v=1573617797197'
-                          />
-                        )}
-                      </Item>
-                      <Item
-                        original='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-4.png?v=1573617797197'
-                        thumbnail='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-4.png?v=1573617797197'
-                        width="1024"
-                        height="768"
-                      >
-                        {({ref, open}) => (
-                          <img style={{marginRight: 5, width: 80, height: 60}}
-                               ref={ref}
-                               onClick={open}
-                               src='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-4.png?v=1573617797197'
-                          />
-                        )}
-                      </Item>
-                      <Item
-                        original='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-4.png?v=1573617797197'
-                        thumbnail='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-4.png?v=1573617797197'
-                        width="1024"
-                        height="768"
-                      >
-                        {({ref, open}) => (
-                          <img style={{marginRight: 5, width: 80, height: 60}}
-                               ref={ref}
-                               onClick={open}
-                               src='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-4.png?v=1573617797197'
-                          />
-                        )}
-                      </Item>
-                      <Item
-                        original='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-3.png?v=1573617797197'
-                        thumbnail='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-3.png?v=1573617797197'
-                        width="1024"
-                        height="768"
-                      >
-                        {({ref, open}) => (
-                          <img style={{marginRight: 5, width: 80, height: 60}}
-                               ref={ref}
-                               onClick={open}
-                               src='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-3.png?v=1573617797197'
-                          />
-                        )}
-                      </Item>
-                    </Gallery>
-                  </div>
+                  <Carousel>
+                    <img style={{backgroundColor: '#FAFAFA'}}
+                         src='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-7.png?v=1573617877677'/>
+                    <img style={{backgroundColor: '#FAFAFA'}}
+                         src='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-5.png?v=1573617797197'/>
+                    <img style={{backgroundColor: '#FAFAFA'}}
+                         src='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-4.png?v=1573617797197'/>
+                    <img style={{backgroundColor: '#FAFAFA'}}
+                         src='https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-3.png?v=1573617797197'/>
+                  </Carousel>
                 </div>
-              </Box>
+              </Grid>
+              <Grid item md={7} xs={12}>
+                <Box display="flex">
+                  <div>
+                    <h3>GẬY GOLF DUNLOP - D619066-XX</h3>
+                    <p>
+                      Mã sản phẩm: D619066-XX
+                    </p>
+                    <p>
+                      Nhà sản xuất: DUNLOP
+                    </p>
+                    <p className='price'>3,600,000₫</p>
+                    <p style={{color: '#2ecc71'}}>
+                      Còn hàng
+                    </p>
+                    <div>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        size="large"
+                        startIcon={<AddShoppingCartIcon/>}
+                      >
+                        Đặt hàng
+                      </Button>
+                    </div>
+                  </div>
+                </Box>
+                <br/>
+                <p>
+                  Thông số sản phẩm:
+                </p>
+                <VerticalHeadingTable/>
+              </Grid>
             </Grid>
-            <Grid item md={6} xs={12}>
-              <VerticalHeadingTable/>
-            </Grid>
-          </Grid>
-          <Box display="flex" flexGrow={1}/>
+            <Box display="flex" flexGrow={1}/>
+          </Container>
         </div>
       </div>
     );

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
-import ProductList from './ProductList'
-import ProductList2 from './ProductList2'
 import './styles.scss'
-import NavBar from '../../components/NavBar'
-import EditModal from './EditModal'
-import Slider from '../../components/Slider'
 import Box from "@material-ui/core/Box";
+import Logo from '../../components/Logo'
+import Typography from "@material-ui/core/Typography";
+import ball from '../../assets/images/ball.png'
+import Copyright from "../../components/Copyright";
+
 
 export default class Home extends Component {
   constructor(props) {
@@ -36,14 +36,93 @@ export default class Home extends Component {
   }
 
   render() {
+
     return (
-      <div className="page-container">
-        <Box display={'flex'} justifyContent="center" flexDirection="row" flexWrap="wrap">
-          <ProductList2
-            onPressAddNew={this.onOpenAddNewModal}
-            onPressEdit={this.onOpenEditModal}/>
-        </Box>
-        <EditModal data={this.state.editData} open={this.state.openEditModal} handleClose={this.onCloseEditModal}/>
+      <div className="img-background">
+        <div className='img-background-container'>
+          <Box style={{padding: 20}} display={'flex'} flexDirection="row" justifyContent={'space-between'}
+               alignItems={'center'}>
+            <Logo/>
+            <Link to={'/login'} className={'btn-header'}>
+              Đăng nhập
+            </Link>
+          </Box>
+          <div className='intro-group-button'>
+            <Link to={'/'} className='top-edge'>
+              <img src={ball}/>
+              <div className="intro-content effect-9 sub-a">
+                <Typography
+                  component="span"
+                  variant="h5"
+                  color="inherit"
+                  className={'intro-title'}
+                >
+                  TSURUYA
+                </Typography>
+                <div className={'image-marked'}/>
+              </div>
+            </Link>
+            <Link to={'/'} className='top-left-edge'>
+              <img src={ball}/>
+              <div className="intro-content effect-9 sub-a">
+                <Typography
+                  component="span"
+                  variant="h5"
+                  color="inherit"
+                  className={'intro-title'}
+                >
+                  Gậy mới
+                </Typography>
+                <div className={'image-marked'}/>
+              </div>
+            </Link>
+            <Link to={'/login'} className='top-right-edge'>
+              <img
+                src={ball}/>
+              <div className="intro-content effect-9 sub-a">
+                <Typography
+                  component="span"
+                  variant="h5"
+                  color="inherit"
+                  className={'intro-title'}
+                >
+                  Gậy cũ
+                </Typography>
+                <div className={'image-marked'}/>
+              </div>
+            </Link>
+            <Link to={'/'} href='#' className='bottom-left-edge'>
+              <img
+                src={ball}/>
+              <div className="intro-content effect-9 sub-a">
+                <Typography
+                  component="span"
+                  variant="h5"
+                  color="inherit"
+                  className={'intro-title'}
+                >
+                  Phụ kiện
+                </Typography>
+                <div className={'image-marked'}/>
+              </div>
+            </Link>
+            <Link to={'/'} href='#' className='bottom-right-edge'>
+              <img
+                src={ball}/>
+              <div className="intro-content effect-9 sub-a">
+                <Typography
+                  component="span"
+                  variant="h5"
+                  color="inherit"
+                  className={'intro-title'}
+                >
+                  Dịch vụ khác
+                </Typography>
+                <div className={'image-marked'}/>
+              </div>
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }

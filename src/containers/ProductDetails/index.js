@@ -20,6 +20,8 @@ import {Carousel} from 'react-responsive-carousel';
 import VerticalHeadingTable from "./VeticalHeadingTable";
 import Button from "@material-ui/core/Button";
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Grid from "@material-ui/core/Grid";
+import AppBar from "../../components/AppBar";
 
 export default class Home extends Component {
   constructor(props) {
@@ -41,6 +43,7 @@ export default class Home extends Component {
     ];
     return (
       <div className="details-container">
+        <AppBar/>
         <div>
           <Breadcrumbs aria-label="breadcrumb">
             <MaterialLink color="inherit">
@@ -89,32 +92,9 @@ export default class Home extends Component {
               <p>
                 Thông số sản phẩm:
               </p>
-              <TableContainer component={Paper}>
-                <Table size="small" aria-label="a dense table">
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>Gậy</TableCell>
-                      <TableCell align="right">Chiều dài</TableCell>
-                      <TableCell align="right">Góc Loft</TableCell>
-                      <TableCell align="right">Góc Lie</TableCell>
-                      <TableCell align="right">Trọng lượng</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {rows.map((row) => (
-                      <TableRow key={row.name}>
-                        <TableCell component="th" scope="row">
-                          {row.name}
-                        </TableCell>
-                        <TableCell align="right">{row.calories}</TableCell>
-                        <TableCell align="right">{row.fat}</TableCell>
-                        <TableCell align="right">{row.carbs}</TableCell>
-                        <TableCell align="right">{row.protein}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
+              <Grid item md={6} xs={6}>
+                <VerticalHeadingTable/>
+              </Grid>
             </div>
           </div>
         </div>

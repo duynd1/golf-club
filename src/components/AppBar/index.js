@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,16 +8,20 @@ import Badge from "@material-ui/core/Badge";
 import ShoppingBasketOutlinedIcon from '@material-ui/icons/ShoppingBasketOutlined';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import {Link} from 'react-router-dom'
+import Drawer from '../Drawer'
+import Logo from '../Logo'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
+  appBar: {
+    backgroundColor: '#3f51b5',
+    color: 'white',
+  },
+  logo: {
+    color: 'white',
+    textDecoration: 'none'
   },
   menuButton: {
     marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
   },
   grow: {
     flexGrow: 1,
@@ -26,23 +30,31 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MainAppBar(props) {
   const classes = useStyles();
-  console.log('AppBar.....', props)
+
+  const drawerRef = useRef(null);
+
+  useEffect(() => {
+    console.log(drawerRef);
+  }, [drawerRef]);
+
+  const onToggleMenu = (open) => {
+    drawerRef.current && drawerRef.current.toggle(open)
+  };
+
   return (
-    <div className={classes.root}>
-      <AppBar position="fixed" style={{backgroundColor: '#3f51b5', color: 'white'}}>
+    <div>
+      <AppBar className={classes.appBar}>
         <Toolbar>
           <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit" aria-label="menu"
-            onClick={props.onPressMenu}
+            onClick={() => onToggleMenu(true)}
           >
             <MenuIcon/>
           </IconButton>
-          <Link to={'/'}>
-            <img
-              src={'https://www.golfthefairways.com/wp-content/uploads/2019/01/fairways-patch-logo.png'}
-              className="App-logo-99" alt="logo"/>
+          <Link to={'/'} className={classes.logo}>
+            <Logo/>
           </Link>
           <div className={classes.grow}/>
           <div className={classes.sectionDesktop}>
@@ -64,6 +76,7 @@ export default function MainAppBar(props) {
           </div>
         </Toolbar>
       </AppBar>
+      <Drawer ref={drawerRef}/>
     </div>
   );
 }
