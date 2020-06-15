@@ -1,0 +1,41 @@
+html, body, #root,.App {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+footer {
+  background-color: #5b5b5b;
+  color: rgba(255, 255, 255, .5);
+  padding: 10px 0 15px;
+  font-size: .9em;
+  padding: 10px;
+}
+
+.page-container {
+  margin-top: 60px;
+  justify-content: center;
+  padding-top: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+}
+
+.img-background {
+  background-image: url("https://demo.hotjoomlatemplates.com/golf/images/slider/slide3.jpg");
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img-background-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
