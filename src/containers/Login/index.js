@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import './styles.scss'
+import {observer, inject} from 'mobx-react';
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 
@@ -58,10 +59,25 @@ const cusStyles = theme => ({
   submit: {},
 });
 
+@inject((store) => store)
+@observer
 class Login extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      username: '',
+      password: ''
+    }
+  }
 
+  handleLogin = () => {
+
+  }
+
+  onChangeField = (value, fieldName) => {
+    this.setState({
+      [fieldName]: value
+    })
   }
 
   render() {
@@ -88,6 +104,7 @@ class Login extends Component {
                   fullWidth
                   id="email"
                   label="Username"
+                  onChange={(event) => this.onChangeField(event.target.value, 'username')}
                   name="email"
                   autoComplete="email"
                   autoFocus
@@ -105,6 +122,7 @@ class Login extends Component {
                   label="Mật khẩu"
                   type="password"
                   id="password"
+                  onChange={(event) => this.onChangeField(event.target.value, 'password')}
                   autoComplete="current-password"
                   InputLabelProps={{
                     style: {
@@ -118,6 +136,7 @@ class Login extends Component {
                     variant="contained"
                     color="primary"
                     className={classes.submit}
+                    onPress
                   >
                     Sign In
                   </Button>

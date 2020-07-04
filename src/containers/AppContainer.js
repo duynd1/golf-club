@@ -5,6 +5,7 @@ import Dashboard from './Dashboard'
 import Login from './Login'
 import ProductDetails from './ProductDetails'
 import ProductDetails2 from './ProductDetails2'
+import UserProfile from './UserProfile'
 
 import ShoppingCart from './ShoppingCart'
 import '../themes/globalStyles.scss'
@@ -22,9 +23,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/*<AppBar onPressMenu={() => onToggleMenu(true)}/>*/}
-      {/*<Drawer ref={drawerRef}/>*/}
       <Switch>
+        <Route path="/userprofile" component={UserProfile}/>
         <Route path="/shopping-cart" component={ShoppingCart}/>
         <Route path="/product-details-old" component={ProductDetails}/>
         <Route path="/product-details" component={ProductDetails2}/>

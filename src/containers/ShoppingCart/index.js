@@ -1,11 +1,7 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import TextField from '@material-ui/core/TextField';
-import {Link} from 'react-router-dom'
-import Button from "@material-ui/core/Button";
+import AppBar from "../../components/AppBar";
+import TabBar from './TabBarCart'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,10 +10,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 60,
     padding: 50
   },
-  paper: {
-    padding: theme.spacing(2),
-    color: theme.palette.text.secondary,
-  },
 }));
 
 export default function ShoppingCart() {
@@ -25,108 +17,8 @@ export default function ShoppingCart() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3} justify="flex-end">
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>
-            <Box display={'flex'} justifyContent="space-between" flexDirection="row" flexWrap="wrap">
-              <Box display={'flex'} flexDirection="row" flexWrap="wrap">
-                <img style={{width: 180, height: 180}}
-                     src={'https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/bo-gay-golf-fullset-nu-callaway-solaire-2018-7.png?v=1573617877677'}/>
-                <div>
-                  <Link to={'/product-details'}>
-                    <div style={{color: '#0066c0', fontSize: 17, textDecoration: 'none'}}>GẬY GOLF
-                      DUNLOP - D619066-XX
-                    </div>
-                  </Link>
-                  <div style={{marginBottom: 5, marginTop: 10}}>Mã SP: D619066-XX</div>
-                  <div style={{marginBottom: 5, marginTop: 10}}>Nhà sản xuất: DUNLOP</div>
-                  <TextField
-                    id="outlined-number"
-                    label="Số lượng"
-                    type="number"
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
-                    style={{width: 80, marginTop: 10, marginBottom: 10}}
-                    value={1}
-                    variant="outlined"
-                  />
-                  <div>
-                    <a href={'#'} style={{color: 'rgb(27, 168, 255)', fontSize: 13}}>Xoá</a>
-                  </div>
-                </div>
-              </Box>
-              <div style={{
-                color: 'rgb(36, 36, 36)',
-                fontSize: 15,
-                fontWeight: '500',
-              }}>
-                3,600,000₫
-              </div>
-            </Box>
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>
-            <Box display={'flex'} justifyContent="space-between" flexDirection="row" flexWrap="wrap">
-              <Box display={'flex'} flexDirection="row" flexWrap="wrap">
-                <img style={{width: 180, height: 180}}
-                     src={'https://bizweb.dktcdn.net/thumb/grande/100/182/519/products/815279.jpg?v=1571041664147'}/>
-                <div>
-                  <Link to={'/product-details'}>
-                    <div style={{color: '#0066c0', fontSize: 17, textDecoration: 'none'}}>GẬY GOLF Mạ vàng - D619073-HM
-                    </div>
-                  </Link>
-                  <div style={{marginBottom: 5, marginTop: 10}}>Mã SP: D619073-HM</div>
-                  <div style={{marginBottom: 5, marginTop: 10}}>Nhà sản xuất: DUNLOP</div>
-                  <TextField
-                    id="outlined-number"
-                    label="Số lượng"
-                    type="number"
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
-                    style={{width: 80, marginTop: 10, marginBottom: 10}}
-                    value={1}
-                    variant="outlined"
-                  />
-                  <div>
-                    <a href={'#'} style={{color: 'rgb(27, 168, 255)', fontSize: 13}}>Xoá</a>
-                  </div>
-                </div>
-              </Box>
-              <div style={{
-                color: 'rgb(36, 36, 36)',
-                fontSize: 15,
-                fontWeight: '500',
-              }}>
-                19,600,000₫
-              </div>
-            </Box>
-          </Paper>
-        </Grid>
-        <Grid item md={4} xs={12}>
-          <Paper className={classes.paper}>
-            <Box display={'flex'} justifyContent="space-between" alignItems={'center'} flexDirection="row"
-                 flexWrap="wrap">
-              <div style={{fontWeight:'500'}}>Thành tiền</div>
-              <div style={{
-                color: 'rgb(255, 66, 78)',
-                fontSize: 20,
-                fontWeight: '500',
-              }}>
-                23,200,000₫
-              </div>
-            </Box>
-            <Box display={'flex'} justifyContent="flex-end" flexDirection="row"
-            >
-              <Button style={{marginTop: 20}} variant="contained" color="secondary">
-                Thanh toán
-              </Button>
-            </Box>
-          </Paper>
-        </Grid>
-      </Grid>
+      <AppBar/>
+      <TabBar/>
     </div>
   );
 }
